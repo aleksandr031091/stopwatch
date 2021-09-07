@@ -21,8 +21,10 @@ body {
 
   transition: 300ms;
 }
-.btn:hover,
-.btn:focus {
+.btn:hover {
+  color: black;
+  background-color: grey;
+  border-color: black;
   transform: scale(1.09);
 }
 
