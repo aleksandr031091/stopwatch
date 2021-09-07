@@ -8,7 +8,7 @@ const refs = {
   secs: document.querySelector('[data-value="secs"]'),
 };
 
-refs.toggleWotch.addEventListener("click", startTime);
+refs.toggleWotch.addEventListener("click", start);
 refs.resetBtn.addEventListener("click", reset);
 refs.pauseBtn.addEventListener("click", pause);
 
@@ -42,16 +42,9 @@ function setCountUpTimer() {
   }, 1000);
 }
 
-function startTime(e) {
+function start(e) {
   setCountUpTimer();
 }
-
-// function r() {
-//   const s = document.body.querySelector("button[is_stop='stop']");
-//   // .addEventListener("click", fn);
-//   s.addEventListener("click", reset());
-//   console.log(s);
-// }
 
 function pause() {
   clearInterval(obj.interval);
