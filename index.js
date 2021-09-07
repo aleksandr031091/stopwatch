@@ -13,8 +13,8 @@ refs.resetBtn.addEventListener("click", reset);
 refs.pauseBtn.addEventListener("click", pause);
 
 const obj = {
-  currentSecs: 57,
-  currentMins: 59,
+  currentSecs: 0,
+  currentMins: 0,
   currentHours: 0,
   interval: null,
 };
@@ -43,7 +43,11 @@ function setCountUpTimer() {
 }
 
 function start(e) {
-  setCountUpTimer();
+  if (e.target.innerHTML === "Start") {
+    setCountUpTimer();
+  } else if (e.target.innerHTML === "Stop") {
+    reset();
+  }
 }
 
 function pause() {
@@ -58,7 +62,7 @@ function reset() {
   refs.secs.textContent = "0";
   refs.mins.textContent = "0";
   refs.hours.textContent = "0";
-
+  changeTextBtn("Start");
   clearInterval(obj.interval);
 }
 
